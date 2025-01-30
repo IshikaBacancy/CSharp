@@ -11,23 +11,34 @@ class Program
 {
     static async Task Main(string[] args)
     {
-        //Console.WriteLine("Starting asynchronous tasks..");
 
-        
-        List<Task<int>> tasks = new List<Task<int>>
+        try
         {
-            task4.PerformAsyncTask(1),
-            task4.PerformAsyncTask(2),
-            task4.PerformAsyncTask(3),
-            task4.PerformAsyncTask(4)
-        };
+            Console.WriteLine("Starting asynchronous tasks...");
+            List<Task<int>> tasks = new List<Task<int>>
+            {
+                AsyncTasker.PerformAsyncTask(1),
+                AsyncTasker.PerformAsyncTask(2),
+                AsyncTasker.PerformAsyncTask(3),
+                AsyncTasker.PerformAsyncTask(4)
+            };
 
-        int[] results = await Task.WhenAll(tasks);
+            int[] results = await Task.WhenAll(tasks);
 
-        
-        foreach (int result in results) 
-            Console.WriteLine(result);
 
-        Console.WriteLine("All tasks completed.");
+            foreach (int result in results)
+            {
+                Console.WriteLine(result);
+            }
+                
+
+            Console.WriteLine("All tasks completed.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
+        }
+
+            
     }
 }
