@@ -1,8 +1,5 @@
 ﻿using System;
-
-
-
-//Console.WriteLine("Hello, World!");
+// Task 1 : To calculate the factorial of a number
 
 // Method to calculate the factorial of a number
 int Factorial(int n)
