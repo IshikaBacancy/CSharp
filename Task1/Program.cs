@@ -1,26 +1,57 @@
-﻿using System;
-// Task 1 : To calculate the factorial of a number
+// See https://aka.ms/new-console-template for more information
+//Task 2: Create a program that generates 50 random integers, stores them in an array, and calculates and displays both the sum and average of even numbers only
 
-// Method to calculate the factorial of a number
-int Factorial(int n)
+using System;
+using Task2;
+
+
+namespace Array
 {
-    int res = 1;
+    class Program
+    {
+        static void Main(String[] args)
+        {
+            try
+            {
+                EvenStatistics array = new EvenStatistics();
 
-    for (int i = 2; i <= n; i++)
-        res *= i;
-    return res;
+                try
+                {
+                    Console.WriteLine("The generated numbers are: " + string.Join(", ", array.Numbers));
+
+                    Console.WriteLine("The even sum of the array: " + array.CalculateEvenSum());
+
+                    Console.WriteLine("The even average of the array: " + array.CalculateEvenAverage());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("An error occurred while processing the numbers: " + ex.Message);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred while initializing the EvenStatistics object: " + ex.Message);
+            }
+                
+
+
+
+
+
+
+            
+
+
+        }
+    }
 }
 
-// Prompt the user to enter a number
-Console.Write("Enter a number to calculate its factorial: ");
-string? input = Console.ReadLine();
 
-// Validate and parse user input
-if (int.TryParse(input, out int num) && num >= 0)
-{
-    Console.WriteLine("Factorial of " + num + " is " + Factorial(num));
-}
-else
-{
-    Console.WriteLine("Invalid input! Please enter a non-negative integer.");
-}
+
+
+
+
+
+
+
