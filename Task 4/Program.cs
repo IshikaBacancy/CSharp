@@ -2,7 +2,7 @@
 // You must ensure that the program does not block while waiting for multiple tasks to complete.
 // The twist: You need to gather and process the results of these operations in parallel and output them as soon as all tasks are finished.
 
-using Task_4;
+using AsyncManager;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
