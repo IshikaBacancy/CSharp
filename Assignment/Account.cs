@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
-    namespace BMS
+    
     {
         abstract class Account
         {
