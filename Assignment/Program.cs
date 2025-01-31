@@ -1,64 +1,42 @@
-
-//Console.WriteLine("Hello, World!");
 using System;
 using System.Collections.Generic;
-using System.Linq;
-
 
 namespace Assignment
 {
-    class Program
+    abstract class Account
     {
-        static void Main(string[] args)
+        public string Name { get; private set; }
+        public string AccountNumber { get; private set; }
+        public double Balance { get; private set; }
+
+        public Account(string name, string accountNumber, double initialBalance)
         {
-            try
-            {
-            
-
-    
-        
-        
-            static void Main(string[] args)
-            {
-                String input;
-               
-                Console.WriteLine("Welcome to Bank Management System");
-                while (true)
-                {
-                    Console.WriteLine("\nWhat you want to do:");
-                    Console.WriteLine("1. Create account");
-                    Console.WriteLine("2. Enter the account number");
-                    
-
-                    object ob1 = Console.ReadLine();
-                    input = Convert.ToString(ob1);
-
-                    if (input == "1")
-                    {
-                        Console.WriteLine("Enter account Type :");
-                        .create_account();
-
-                    }
-                    else if (input == "2")
-                    {
-                        Console.Write("Enter account Number :");
-                        .showInfo();
-                    }
-                    
-                    
-                    Console.ReadKey();
-
-
-                }
-
-            }
-
-        
+            Name = name;
+            AccountNumber = accountNumber;
+            Balance = initialBalance;
+        }
     }
 
-}
+    class Bank
+    {
+        private List<Account> accounts = new List<Account>();
+
+        public void CreateAccount(string name, string accountNumber, double initialBalance)
+        {
+            var account = new SavingsAccount(name, accountNumber, initialBalance);
+            accounts.Add(account);
+            Console.WriteLine("Account created successfully.");
         }
+    }
+
     
 
-
-
+    class Program
+    {
+        static void Main()
+        {
+            Bank bank = new Bank();
+            bank.CreateAccount("John Doe", "123456789", 1000);
+        }
+    }
+}
