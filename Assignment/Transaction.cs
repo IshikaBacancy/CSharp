@@ -4,60 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment
+namespace Practice_1
 {
     public class Transaction
     {
-        //protected string firstName;
-        //protected string lastName;
-        //protected long Accountnumber;
-        //protected int InitialBalance;
-
-        public string FirstName()
-        {
-            string name = "Ishika";
-            //string last_name = "Raiyani";
-
-
-
-
-
-
-        }
-
-        public string LastName
-        {
-            get { return lastName; }
-            set
-            {
-                lastName = value;
-            }
         
+        public DateTime TransactionDate { get; set; }
+        public string Type { get; set; }
+        public double Amount {  get; set; }
+        public double BalanceAfterTransaction { get; set; }
 
-        }
-
-        public long AccountNumber
+        public Transaction(string type, double amount, double balanceAfterTransaction)
         {
-            get { return AccountNumber; }
-            set
-            {
-                AccountNumber = value;
-            }
-
+            TransactionDate = DateTime.Now;
+            Type = type;
+            Amount = amount;
+            BalanceAfterTransaction = balanceAfterTransaction;
 
         }
-
-        public int Initialbalance
+        public void DisplayTransactionInfo()
         {
-            get { return InitialBalance; }
-            set
-            {
-                InitialBalance = value;
-            }
-
-
+            Console.WriteLine($"{TransactionDate} | {Type} | Amount: {Amount} | Balance: {BalanceAfterTransaction}");
         }
-
-
     }
 }
