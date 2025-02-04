@@ -66,20 +66,20 @@ namespace Day_6
 
         // }
 
-        public void isCarAvailable()
-        {
-            if(Available)
-            {
+        // public void isCarAvailable()
+        // {
+        //     if(Available)
+        //     {
                 
-                Console.WriteLine("The car you want for rent is available");
+        //         Console.WriteLine("The car you want for rent is available");
            
-            }
-            else
-            {
+        //     }
+        //     else
+        //     {
 
-                Console.WriteLine("The car you want is currently unavailable");
-            }
-        }
+        //         Console.WriteLine("The car you want is currently unavailable");
+        //     }
+        // }
 
         
         public void GetDetails()
