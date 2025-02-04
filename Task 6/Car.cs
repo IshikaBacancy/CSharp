@@ -45,26 +45,26 @@ namespace Day_6
       }
 
 
-        public static void AddLuxuryCar(string brand, string model, float rentperday, bool isAvailable)
-        {
-            Console.WriteLine("Enter the name of Luxury Car:");
-            Console.WriteLine($"Enter the  brand name {brand}, Enter the model {model}, Enter the price for rent{rentperday} , Enter the availability of car {isAvailable}");
-            Console.WriteLine(brand);
-            Console.WriteLine(model);
-            Console.WriteLine(rentperday);
-            Console.WriteLine(isAvailable);
-        }
+        // public static void AddLuxuryCar(string brand, string model, float rentperday, bool isAvailable)
+        // {
+        //     Console.WriteLine("Enter the name of Luxury Car:");
+        //     Console.WriteLine($"Enter the  brand name {brand}, Enter the model {model}, Enter the price for rent{rentperday} , Enter the availability of car {isAvailable}");
+        //     Console.WriteLine(brand);
+        //     Console.WriteLine(model);
+        //     Console.WriteLine(rentperday);
+        //     Console.WriteLine(isAvailable);
+        // }
 
-        public static void AddEconomyCar(string brand, string model, float rentperday, bool isAvailable)
-        {
-            Console.WriteLine("Enter the name of Economy Car: ");
-            //Console.WriteLine($"Enter the  brand name {brand}, Enter the model {model}, Enter the price for rent{rentperday} , Enter the availability of car {isAvailable}");
-            Console.WriteLine(brand);
-            Console.WriteLine(model);
-            Console.WriteLine(rentperday);
-            Console.WriteLine(isAvailable);
+        // public static void AddEconomyCar(string brand, string model, float rentperday, bool isAvailable)
+        // {
+        //     Console.WriteLine("Enter the name of Economy Car: ");
+        //     //Console.WriteLine($"Enter the  brand name {brand}, Enter the model {model}, Enter the price for rent{rentperday} , Enter the availability of car {isAvailable}");
+        //     Console.WriteLine(brand);
+        //     Console.WriteLine(model);
+        //     Console.WriteLine(rentperday);
+        //     Console.WriteLine(isAvailable);
 
-        }
+        // }
 
         public void isCarAvailable()
         {
