@@ -44,45 +44,7 @@ namespace Day_6
             get {  return Available;  } 
       }
 
-
-        // public static void AddLuxuryCar(string brand, string model, float rentperday, bool isAvailable)
-        // {
-        //     Console.WriteLine("Enter the name of Luxury Car:");
-        //     Console.WriteLine($"Enter the  brand name {brand}, Enter the model {model}, Enter the price for rent{rentperday} , Enter the availability of car {isAvailable}");
-        //     Console.WriteLine(brand);
-        //     Console.WriteLine(model);
-        //     Console.WriteLine(rentperday);
-        //     Console.WriteLine(isAvailable);
-        // }
-
-        // public static void AddEconomyCar(string brand, string model, float rentperday, bool isAvailable)
-        // {
-        //     Console.WriteLine("Enter the name of Economy Car: ");
-        //     //Console.WriteLine($"Enter the  brand name {brand}, Enter the model {model}, Enter the price for rent{rentperday} , Enter the availability of car {isAvailable}");
-        //     Console.WriteLine(brand);
-        //     Console.WriteLine(model);
-        //     Console.WriteLine(rentperday);
-        //     Console.WriteLine(isAvailable);
-
-        // }
-
-        // public void isCarAvailable()
-        // {
-        //     if(Available)
-        //     {
-                
-        //         Console.WriteLine("The car you want for rent is available");
-           
-        //     }
-        //     else
-        //     {
-
-        //         Console.WriteLine("The car you want is currently unavailable");
-        //     }
-        // }
-
-        
-        public void GetDetails()
+       public void GetDetails()
         {
             Console.WriteLine($"Brand: {Brand}");
             Console.WriteLine($"Model: {Model}");
@@ -92,9 +54,5 @@ namespace Day_6
 
 
     }
-
-
-
-
 }
 
