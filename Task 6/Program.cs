@@ -24,7 +24,7 @@ namespace Day_6
             luxuryCar1.GetRentCar();
             luxuryCar.SetRentCar("Model B");
             luxuryCar.GetReturnCar();
-            luxuryCar.SetReturnCar("Model C");
+            luxuryCar.SetReturnCar("Model B");
 
 
             Car luxuryCar2 = new Car("Audi", "A8", 5500.8f, false);
