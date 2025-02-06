@@ -1,4 +1,5 @@
-﻿using System;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,9 +16,10 @@ namespace Day_6
 
         public Car()
         {
-            
+
         }
-        public Car(string brand, string model, float rentperday, bool isAvailable){
+        public Car(string brand, string model, float rentperday, bool isAvailable)
+        {
             Brand = brand;
             Model = model;
             RentPerDay = rentperday;
@@ -28,28 +30,55 @@ namespace Day_6
         {
             Console.WriteLine("The car object you are trying to access is removed:");
         }
-      public string RentCar 
-      {  get; set;
-            
-      }
-      public string ReturnCar
-      { get; set; 
-        
-      }
+        public string RentCar
+        {
+            get; set;
 
-      
+        }
+        public string ReturnCar
+        {
+            get; set;
 
-      public bool IsAvailable
-      { 
-            get {  return Available;  } 
-      }
+        }
 
-       public void GetDetails()
+        public string GetRentCar()
+        {
+            return Brand;
+
+        }
+        public void SetRentCar(string Brand)
+        {
+            this.Brand = Brand;
+
+        }
+
+        public string GetReturnCar()
+        {
+            return Brand;
+
+        }
+        public void SetReturnCar(string Brand)
+        {
+            this.Brand = Brand;
+
+        }
+
+
+
+
+
+        public bool IsAvailable
+        {
+            get { return Available; }
+        }
+
+        public void GetDetails()
         {
             Console.WriteLine($"Brand: {Brand}");
             Console.WriteLine($"Model: {Model}");
             Console.WriteLine($"Rent Per Day: {RentPerDay}");
             Console.WriteLine($"Availability: {(IsAvailable ? "Available" : "Not Available")}");
+            
         }
 
 
