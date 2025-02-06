@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +11,7 @@ namespace Day_6
         public string Brand;
         public string Model;
         public float RentPerDay;
-        private readonly bool Available;
+        private  bool _Available;
 
         public Car()
         {
@@ -23,53 +22,41 @@ namespace Day_6
             Brand = brand;
             Model = model;
             RentPerDay = rentperday;
-            Available = isAvailable;
+            _Available = isAvailable;
 
         }
         ~Car()
         {
             Console.WriteLine("The car object you are trying to access is removed:");
         }
-        public string RentCar
+        
+        public void RentCar()
         {
-            get; set;
-
-        }
-        public string ReturnCar
-        {
-            get; set;
-
-        }
-
-        public string GetRentCar()
-        {
-            return Brand;
-
-        }
-        public void SetRentCar(string Brand)
-        {
-            this.Brand = Brand;
-
+            if(_Available) {
+                _Available = false;
+                Console.WriteLine("Car has been rented successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Car is not available for rent.");
+            }
         }
 
-        public string GetReturnCar()
+        public void ReturnCar()
         {
-            return Brand;
-
+            if (!_Available)
+            {
+                _Available = true;
+                Console.WriteLine("Car has been returned successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Car is already available.");
+            }
         }
-        public void SetReturnCar(string Brand)
-        {
-            this.Brand = Brand;
-
-        }
-
-
-
-
-
         public bool IsAvailable
         {
-            get { return Available; }
+            get { return _Available; }
         }
 
         public void GetDetails()
@@ -80,7 +67,6 @@ namespace Day_6
             Console.WriteLine($"Availability: {(IsAvailable ? "Available" : "Not Available")}");
             
         }
-
 
     }
 }
