@@ -33,17 +33,6 @@ namespace Day_7
             Console.WriteLine($"Brand: {Brand}, Model: {Model}");
         }
 
-        //public string customerName;
-        //public int rentalDays;
-        //public void RentCar(string customerName) {
-        //    Console.WriteLine($"{customerName} is renting the car.");
-        //}
-
-        //public void RentCar(string customerName, int rentalDays)
-        //{
-        //    Console.WriteLine($"{customerName} is renting the car for {rentalDays} days.");
-        //}
-
 
         public virtual void CalculateRentCost()
         {
