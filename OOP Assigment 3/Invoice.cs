@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,14 +17,29 @@ namespace OOP_3_Assignment
             this.taxCalculator = taxCalculator;
         }
 
+        
         public double CalculateTotal()
         {
             return amount + taxCalculator.CalculateTax(amount);
         }
 
+       
+    }
+
+    // Implementing the Single Responsibility Principle by creating a separate class for PrintInvoice(InvoicePrinter)
+    class InvoicePrinter
+        {
+           private Invoice invoice;
+
+        public InvoicePrinter(Invoice invoice)
+        {
+            this.invoice = invoice;
+        }
+
         public void PrintInvoice()
         {
-            Console.WriteLine("Invoice Total: " + CalculateTotal());
+           
+            Console.WriteLine("Invoice Total (with tax): " + invoice.CalculateTotal());
         }
     }
 }
