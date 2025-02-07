@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,9 +51,11 @@ namespace Day_7
 
         }
 
-        public LuxuryCar(int higherRent)
+        public LuxuryCar(string brand, string model, int higherRent)
+            : base(brand, model)
         {
             HigherRent = higherRent;
+            Console.WriteLine($"LuxuryCar constructor is called. Higher Rent: {HigherRent}");
         }
 
         public override void Rent()
@@ -84,9 +86,11 @@ namespace Day_7
 
         }
 
-        public EconomyCar(int budgetRent)
+        public EconomyCar(string brand, string model, int budgetRent)
+            : base(brand, model)
         {
             BudgetRent = budgetRent;
+            Console.WriteLine($"EconomyCar constructor is called. Budget Rent: {BudgetRent}");
         }
 
         public override void Rent()
