@@ -15,7 +15,7 @@ namespace OOP_3_Assignment
     {
         public double CalculateTax(double amount)
         {
-            return amount * 0.18; // 
+            return amount * 1.18; 
         }
     }
 }
