@@ -11,12 +11,11 @@ namespace OOP_3_Assignment
         double CalculateTax(double amount);
     }
 
-    // Standard 18% tax calculation
     public class StandardTaxCalculator : ITaxCalculator
     {
         public double CalculateTax(double amount)
         {
-            return amount * 0.18; // 18% tax
+            return amount * 0.18; // 
         }
     }
 }
