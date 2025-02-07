@@ -8,7 +8,9 @@ namespace OOP_3_Assignment
         {
             ITaxCalculator standardTax = new StandardTaxCalculator();
             Invoice invoice = new Invoice(1000, standardTax);
-            invoice.PrintInvoice();
+            InvoicePrinter printer = new InvoicePrinter(invoice);
+
+            printer.PrintInvoice();
 
 
         }
