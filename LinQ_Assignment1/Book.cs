@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,7 +35,7 @@ namespace LinQ_Assignment1
         {
             return new List<Book>
             {
-                new Book(1, "The Great Gatsby", "F. Scott Fitzgerald", null, new List<string>{"Classic", "Novel"}),
+                new Book(1, "The Great Gatsby", "F. Scott Fitzgerald",100.56, new List<string>{"Classic", "Novel"}),
                 new Book(2, "To Kill a Mockingbird", "Harper Lee", null, new List<string>{"Classic", "Drama"}),
                 new Book(3, "1984", "George Orwell", 519.99, new List<string>{"Dystopian", "Sci-Fi"}),
                 new Book(4, "Moby-Dick", "Herman Melville", 615.75, new List<string>{"Adventure", "Classic"}),
@@ -57,12 +57,5 @@ namespace LinQ_Assignment1
                 new Book(20, "Jane Eyre", "Charlotte Brontë", 711.50, new List<string>{"Classic", "Romance"})
             };
         }
-
-
-
-
-
-
-
     }
 }
