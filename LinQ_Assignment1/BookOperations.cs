@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +14,7 @@ namespace LinQ_Assignment1
                         where book.Price > 300
                         select book;
 
-            Console.WriteLine("The books which have price greater than 300");
+            Console.WriteLine("By Query: The books which have price greater than 300");
             foreach (var book in Books)
             {
                 Console.WriteLine($"{book.Title} - {book.Price}");
@@ -23,11 +23,12 @@ namespace LinQ_Assignment1
 
         public void MethodGetBooksAbovePrice(List<Book> books, double price)
         {
-            //var Books = books.Where(book => book.Price > 300);
-            //foreach (var book in Books)
-            //{
-            //    Console.WriteLine($"{book.Title} - {book.Price}");
-            //}
+            var Books = books.Where(book => book.Price > 300);
+            Console.WriteLine("By Method: The books which have price greater than 300");
+            foreach (var book in Books)
+            {
+                Console.WriteLine($"{book.Title} - {book.Price}");
+            }
         }
 
         public void QueryGetTitleAndPrice(List<Book> books)
@@ -35,7 +36,7 @@ namespace LinQ_Assignment1
             var Book1 = from book in books
                         select new { book.Title, book.Price };
 
-            Console.WriteLine("Retrieving the title and price by anonymous type");
+            Console.WriteLine("By Query : Retrieving the title and price by anonymous type");
             foreach (var book in Book1)
             {
                 Console.WriteLine($"{book.Title} - {book.Price}");
@@ -44,13 +45,13 @@ namespace LinQ_Assignment1
 
         public void MethodGetTitleAndPrice(List<Book> books)
         {
-            //var Book1 = books.Select(book => new { book.Title, book.Price });
-            //Console.WriteLine("Retrieving the title and price by anonymous type");
+            var Book1 = books.Select(book => new { book.Title, book.Price });
+            Console.WriteLine("By Method : Retrieving the title and price by anonymous type");
 
-            //foreach (var book in Book1)
-            //{
-            //    Console.WriteLine($"{book.Title} - {book.Price}");
-            //}
+            foreach (var book in Book1)
+            {
+                Console.WriteLine($"{book.Title} - {book.Price}");
+            }
         }
 
         public void QueryGroupByGenre(List<Book> books)
@@ -58,7 +59,7 @@ namespace LinQ_Assignment1
             var Book2 = from book in books
                         group book by book.Genres into bookgroup
                         select bookgroup;
-
+            Console.WriteLine("By Query: Querying GroupBy Genre");
             foreach (var group in Book2)
             {
                 Console.WriteLine($"Genre: {group.Key}");
@@ -70,17 +71,17 @@ namespace LinQ_Assignment1
 
         public void MethodGroupByGenre(List<Book> books)
         {
-            //var Book2 = books.GroupBy(book => book.Genres);
+            var Book2 = books.GroupBy(book => book.Genres);
+            Console.WriteLine("By Method: Querying GroupBy Genre");
+            foreach (var group in Book2)
+            {
+                Console.WriteLine($"Genre: {group.Key}");
 
-            //foreach (var group in Book2)
-            //{
-            //    Console.WriteLine($"Genre: {group.Key}");
-
-            //    foreach (var book in group)
-            //    {
-            //        Console.WriteLine($"  {book.Title} - {book.Price}");
-            //    }
-            //}
+                foreach (var book in group)
+                {
+                    Console.WriteLine($"  {book.Title} - {book.Price}");
+                }
+            }
 
         }
 
@@ -90,7 +91,7 @@ namespace LinQ_Assignment1
                          select book.Author)
                         .Distinct();
 
-            Console.WriteLine("Retrieving distinct authors");
+            Console.WriteLine("By Query: Retrieving distinct authors");
             foreach (var author in Book3)
             {
                 Console.WriteLine(author);
@@ -99,13 +100,13 @@ namespace LinQ_Assignment1
 
         public void MethodGetDistinctAuthors(List<Book> books)
         {
-            //var Book3 = books.Select(book => book.Author).Distinct();
+            var Book3 = books.Select(book => book.Author).Distinct();
 
-            //Console.WriteLine("Retrieving distinct authors");
-            //foreach (var author in Book3)
-            //{
-            //    Console.WriteLine(author);
-            //}
+            Console.WriteLine("By Method: Retrieving distinct authors");
+            foreach (var author in Book3)
+            {
+                Console.WriteLine(author);
+            }
         }
 
         public void QueryGetTotalPrice(List<Book> books)
@@ -113,15 +114,15 @@ namespace LinQ_Assignment1
             var totalPrice = (from book in books
                              select book.Price).Sum();
 
-            Console.WriteLine($"The total price of all the books is: {totalPrice}");
+            Console.WriteLine($"By Query: The total price of all the books is: {totalPrice}");
 
         }
 
         public void MethodGetTotalPrice(List<Book> books)
         {
-            //var totalPrice = books.Sum(book => book.Price);
+            var totalPrice = books.Sum(book => book.Price);
 
-            //Console.WriteLine($"The total price of all the books is: {totalPrice}");
+            Console.WriteLine($"By Method: The total price of all the books is: {totalPrice}");
         }
 
         public void QueryGetMinMaxPrice(List<Book> books)
@@ -132,21 +133,21 @@ namespace LinQ_Assignment1
             var MaximumPrice = (from book in books
                                 select book.Price).Max();
             
-            Console.WriteLine($"The cheapest price of all the books is: {cheapestPrice}");
-            Console.WriteLine($"The expensive price of all the books is:{MaximumPrice}");
+            Console.WriteLine($"By Query:The cheapest price of all the books is: {cheapestPrice}");
+            Console.WriteLine($"By Query:The expensive price of all the books is:{MaximumPrice}");
 
 
         }
 
         public void MethodGetMinMaxPrice(List<Book> books)
         {
-            //var MinimumPrice = books.Min(book => book.Price);
+            var MinimumPrice = books.Min(book => book.Price);
 
-            //Console.WriteLine($"The cheapest price of among all the books is:{MinimumPrice}");
+            Console.WriteLine($"By Method:The cheapest price of among all the books is:{MinimumPrice}");
 
-            //var MaximumPrice = books.Max(book => book.Price);
+            var MaximumPrice = books.Max(book => book.Price);
 
-            //Console.WriteLine($"The expensive price among all the books is: {MaximumPrice}");
+            Console.WriteLine($"By Method:The expensive price among all the books is: {MaximumPrice}");
         }
 
         public void QueryGetBooksWithMultipleGenres(List<Book> books)
@@ -155,7 +156,7 @@ namespace LinQ_Assignment1
                                           where book.Genres.Count > 1
                                           select book;
 
-            Console.WriteLine("Books with multiple genres:");
+            Console.WriteLine("By Query: Books with multiple genres:");
             foreach (var book in booksWithMultipleGenres)
             {
                 Console.WriteLine($"{book.Title} - Genres: {string.Join(", ", book.Genres)}");
@@ -164,13 +165,13 @@ namespace LinQ_Assignment1
 
         public void MethodGetBooksWithMultipleGenres(List<Book> books)
         {
-            //var booksWithMultipleGenres = books.Where(book => book.Genres.Count > 1);
+            var booksWithMultipleGenres = books.Where(book => book.Genres.Count > 1);
 
-            //Console.WriteLine("Books with multiple genres:");
-            //foreach (var book in booksWithMultipleGenres)
-            //{
-            //    Console.WriteLine($"{book.Title} - Genres: {string.Join(", ", book.Genres)}");
-            //}
+            Console.WriteLine("By Method:Books with multiple genres:");
+            foreach (var book in booksWithMultipleGenres)
+            {
+                Console.WriteLine($"{book.Title} - Genres: {string.Join(", ", book.Genres)}");
+            }
         }
 
         public void QueryOrderByTitleAndThenByPrice(List<Book> books)
@@ -179,7 +180,7 @@ namespace LinQ_Assignment1
                                orderby book.Price, book.Title
                                select book;
 
-            Console.WriteLine("Books ordered by Price and then by Title:");
+            Console.WriteLine("By Query: Books ordered by Price and then by Title:");
             foreach (var book in orderedBooks)
             {
                 Console.WriteLine($"{book.Title} - Price: {book.Price}");
@@ -188,13 +189,13 @@ namespace LinQ_Assignment1
 
         public void MethodOrderByTitleAndThenByPrice(List<Book> books)
         {
-            //var orderedBooks = books.OrderBy(book => book.Price).ThenBy(book => book.Title);
+            var orderedBooks = books.OrderBy(book => book.Price).ThenBy(book => book.Title);
 
-            //Console.WriteLine("Books ordered by Price and then by Title:");
-            //foreach (var book in orderedBooks)
-            //{
-            //    Console.WriteLine($"{book.Title} - Price: {book.Price}");
-            //}
+            Console.WriteLine("By Method: Books ordered by Price and then by Title:");
+            foreach (var book in orderedBooks)
+            {
+                Console.WriteLine($"{book.Title} - Price: {book.Price}");
+            }
         }
 
         public void QueryCountBookInEachGenre(List<Book> books)
@@ -203,7 +204,7 @@ namespace LinQ_Assignment1
                               group genres by genres into genreGroup
                               select new { Genre = genreGroup.Key, Count = genreGroup.Count() };
 
-            Console.WriteLine("Count of books in each genre:");
+            Console.WriteLine("By Query:Count of books in each genre:");
             foreach (var genres in genreCounts)
             {
                 Console.WriteLine($"{genres.Genre}: {genres.Count}");
@@ -212,15 +213,15 @@ namespace LinQ_Assignment1
 
         public void MethodCountBookInEachGenre(List<Book> books)
         {
-            //var genreCounts = books.SelectMany(book => book.Genres)
-            //           .GroupBy(genre => genre)
-            //           .Select(genreGroup => new { Genre = genreGroup.Key, Count = genreGroup.Count() });
+            var genreCounts = books.SelectMany(book => book.Genres)
+                       .GroupBy(genre => genre)
+                       .Select(genreGroup => new { Genre = genreGroup.Key, Count = genreGroup.Count() });
 
-            //Console.WriteLine("Count of books in each genre:");
-            //foreach (var genre in genreCounts)
-            //{
-            //    Console.WriteLine($"{genre.Genre}: {genre.Count}");
-            //}
+            Console.WriteLine("By Method:Count of books in each genre:");
+            foreach (var genre in genreCounts)
+            {
+                Console.WriteLine($"{genre.Genre}: {genre.Count}");
+            }
         }
 
         public void QueryGetBooksWithNullValue(List<Book> books)
@@ -229,7 +230,7 @@ namespace LinQ_Assignment1
                                      where book.Price == null
                                      select book;
 
-            Console.WriteLine("Books with null price:");
+            Console.WriteLine("By Query:Books with null price:");
             foreach (var book in booksWithNullPrice)
             {
                 Console.WriteLine($"{book.Title} - Price: NULL");
@@ -238,10 +239,10 @@ namespace LinQ_Assignment1
 
         public void MethodGetBooksWithNullValue(List<Book> books)
         {
-            //var booksWithNullPrice = books.Count(book => book.Price == null);
+            var booksWithNullPrice = books.Count(book => book.Price == null);
 
 
-            //Console.WriteLine($"The books where price is null: {booksWithNullPrice}");
+            Console.WriteLine($"By Method:The books where price is null: {booksWithNullPrice}");
         }
     }
 }
