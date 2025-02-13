@@ -15,21 +15,49 @@ namespace LinQ_Assignment2
 
             LinQoperations operations = new LinQoperations();
             operations.MethodGetInnerJoin();
+            operations.QueryGroupJoin();
+
             operations.MethodGroupJoin();
-            operations.MethodCrossJoinPossibleCombinationsofCustomersAndOrders();
+            operations.QueryGroupJoin();
+
+            operations.MethodCrossJoinPossibleCombinationsOfCustomersAndOrders();
+            operations.QueryCrossJoinPossibleCombinationsOfCUstomersAndOrders();
+
             operations.MethodLeftOuterJoin();
+            operations.QueryLeftOuterJoin();
+
             operations.MethodGroupOrderByCustomerId();
+            operations.QueryGroupOrderByCustomerId();
+
             operations.MethodOrderLookUpByCustomer();
+            operations.QueryOrderLookUpByCustomer();
+
             operations.MethodGroupByCountOfOrders();
+            operations.QueryGroupByCountOfOrders();
+
             operations.MethodCustomerNestedQuery();
+            operations.QueryCustomerNestedQuery();
+
             operations.MethodUniqueCitiesCustomers();
+            operations.QueryUniqueCitiesCustomers();
+
             operations.MethodProductsDifferentOrderCombinedCollections();
+            operations.QueryProductsDifferentOrderCombinedCollections();
+
             operations.MethodProductsIntersectionOrderCollections();
-            operations.MethodProductsExceptOrderCollections();
-            operations.GetDistinctProducts();
+            operations.QueryProductsIntersectionOrderCollections();
+
+            operations.MethodGetProductsExceptOrderCollections();
+            operations.QueryGetProductsExceptOrderCollections();
+
+            operations.MethodGetDistinctProducts();
+            operations.QueryGetDistinctProducts();
+
             operations.DeferredExecutionExample();
             operations.ImmediateExecutionExample();
-        }
+
+            operations.MethodEagerLazyLoading();
+         }
     }
 }
 
