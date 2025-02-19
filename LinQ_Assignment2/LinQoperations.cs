@@ -307,25 +307,25 @@ namespace LinQ_Assignment_2
         }
 
         public void QueryOrderLookUpByCustomer()
+   {
+      List<Customer> customers = Customer.GetCustomerDetails();
+      List<Order> orders = Order.GetOrders();
+
+    // Using query syntax to group orders by CustomerId and convert it into a Lookup
+    var orderLookup = (from order in orders select order
+                       ).ToLookup(x => x.CustomerId);
+
+    Console.WriteLine("By Query: Orders grouped by customerId using ToLookup");
+    foreach (var customerOrders in orderLookup)
+    {
+        Console.WriteLine($"CustomerId: {customerOrders.Key}");
+
+        foreach (var order in customerOrders)
         {
-            List<Customer> customers = Customer.GetCustomerDetails();
-            List<Order> orders = Order.GetOrders();
-
-            var orderLookup = orders.ToLookup(order => order.CustomerId);
-
-            Console.WriteLine("By Query: Orders grouped by CustomerId using ToLookup");
-
-            foreach (var customerOrders in orderLookup)
-            {
-                Console.WriteLine($"CustomerId: {customerOrders.Key}");
-
-                foreach (var order in customerOrders)
-                {
-                    Console.WriteLine($"   OrderId: {order.OrderId}, Product: {order.Product}, Amount: ${order.Amount}");
-                }
-            }
-
+            Console.WriteLine($"   OrderId: {order.OrderId}, Product: {order.Product}, Amount: ${order.Amount}");
         }
+     }
+  }  
 
         //Modify the GroupBy query to display the CustomerId, count of orders, and the highest order amount per customer.
         public void MethodGroupByCountOfOrders()
